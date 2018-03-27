@@ -1,0 +1,104 @@
+\documentclass[13pt]{scrreprt}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+
+% Title Page
+\title{Numerik Boxen}
+\author{}
+
+
+\newenvironment{ebox}[1]{#1\\}{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+
+\chapter{1}
+
+11
+\begin{equation*}
+v + 134 = 16
+\end{equation*}
+	
+12
+\begin{equation*}
+f_{rd}(r):= \delta_{r}:=rd(r)-r
+\end{equation*}
+
+13
+\begin{equation*}
+f_{rel}:=\epsilon_{r}:= \frac{\delta_{r}}{r}=\frac{rd(r) -r}{r} \quad\text{ für }\quad r \ne 0
+\end{equation*}
+
+
+
+16
+\begin{equation*}
+|\delta_{r}| \leqslant 2^{e-t} \qquad \text{und} \qquad  |\epsilon_{r}| \leqslant 2^{-t}
+\end{equation*}
+
+17
+\begin{equation*}
+\epsilon = 2^{-t}
+\end{equation*}
+
+18
+
+...die entsprechenden Maschinenoperationen, d.h. die Anwendung der jeweiligen Operation auf Zahlen im normierten Gleitpunkzahlenformat nach Def. 1.2
+
+19
+
+I) Verknüpfung der Maschinenzahlen mit höherer (ausreichend hoher) Genauigkeit\\
+II) Runden des Ergebnisses auf eine Maschinenzahl
+
+\begin{ebox}{20}
+	\begin{align*}
+	r \circ _{M}s := rd(r \circ s)
+	\end{align*}
+\end{ebox}
+
+\begin{ebox}{21}
+	\begin{align*}
+	r + _{M} s = (1,11)_2 \cdot 2^0 +_{M} (1,10)_2 \cdot 2^2 &= (111)_2 \cdot 2^{-2} + (1,10)_2 \cdot 2^{-2}\\
+	&= (1000,10)_2 \cdot 2^{-2}\\
+	&= (100010)_2 \cdot 2^1\\
+	&= (1,00)_2 \cdot 2^1 = (2)_{10}
+	\end{align*}
+	wohingegen das exakte Ergebnis $ r+s = \frac74 + \frac38= \frac{17}{8}$ ist.\\
+	\begin{align*}
+	\text{Der absolute Rundengsfehler ist also}\\
+	f_{rd} = (r+_M s) - (r + s) = 2 -\frac{17}{8} = -\frac{1}{8}\\
+	\text{und der relative Rundungsfehler ist}\\
+	|f_{rel}| = |\frac{(1 +_M s)-(r+s)}{r+s}| = \frac{\frac18}{\frac{17}{8}} = \frac{1}{17} = 0,0588... \approx 5,88\%\\
+	\text{DAs ist relativ gut, denn der maximale Rundugnfehler bei einer 3-stelligen Mantisse ist} \quad \epsilon =   2^{-3} = 12,5\%
+	\end{align*}
+\end{ebox}
+
+
+\begin{ebox}{23}
+	\begin{align*}
+	r \circ_M s = rd(r \circ s) = (r\circ s)\cdot(1 + \epsilon_0)
+	\end{align*}
+	wobei der realtie Fehler $\epsilon_0$ der Gleitpunktoperation wegen Def. 1.10 stets durh die Maschinengenauigkeit beschränkt ist,
+	\begin{align*}
+	\epsilon_0 := \frac{(r\circ_M s)-(r \circ s)}{r \circ s} = \frac{rd(r \circ s) - (r \circ s)}{r \circ s} \leqslant \epsilon
+	\end{align*}
+\end{ebox}
+
+\begin{ebox}{24}
+	\begin{align*}
+		\tilde{y} = \tilde{x} +_M c \\
+		
+	\end{align*}
+\end{ebox}
+
+
+\end{document}          
