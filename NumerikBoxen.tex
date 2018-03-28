@@ -7,6 +7,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \usepackage{environ}
+\usepackage{enumitem}
+\usepackage[many]{tcolorbox}
 
 
 % Title Page
@@ -14,7 +16,7 @@
 \author{Florian Lubitz \& Steffen Hecht}
 
 \newcounter{BoxCounter}
-\setcounter{BoxCounter}{10}
+\setcounter{BoxCounter}{0}
 \NewEnviron{tbox}{%
 	\stepcounter{BoxCounter}
 	\textbf{\arabic{BoxCounter}}
@@ -28,11 +30,80 @@
 		\end{align*}
 }
 
+\newtcolorbox{dbox}[1][]{%
+	enhanced,frame hidden,interior hidden,
+	arc=0pt,outer arc=0pt,borderline={0.4pt}{0pt}{dashed},
+	nobeforeafter, box align=center, before={\stepcounter{BoxCounter}\boxed{\arabic{BoxCounter}}\makebox[.5cm]{}}, after={\vspace{0.5cm}}
+}
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
 
 \begin{document}
 \maketitle
 
 \chapter{1}
+
+\begin{dbox}
+\end{dbox}
+
+\begin{dbox}
+	Die \underline{Gleitpunktzahlendarstellung} zerlegt jede reelle Zahl $r \in \mathbb{R}$ in drei Bestandteile:\\
+	\begin{enumerate}[label=\Roman*)]
+		\item ein Vorzeichen $ (-1)^v$ mit $v \in \{0, 1\}$
+		\item eine Mantisse $m \in \mathbb{R}$ und
+		\item einen Exponenten $e \in \mathbb{Z}$, sodass
+	\end{enumerate}
+	\begin{equation}
+	r = (-1)^v \cdot m \cdot 2^e
+	\end{equation}
+\end{dbox}
+
+\begin{dbox}
+	\begin{equation}
+	r = (-1)^v \cdot \sum_{i = 0}^{t - 1} r_i \cdot 2^{-i} \text{ mit } r_0 = 1 \text{ (sodass } 1 \le m \le 2\text{)}
+	\end{equation}
+\end{dbox}
+
+\begin{dbox}
+	\begin{align*}
+	13,6 &= 2^3 + 5,6\\
+	&= 2^3 + 2^2 + 1,6\\
+	&= ...\\
+	&= 2^3 + 2^2 + 2^0 + 2^{-1} + 2^{-4} + 0,0375\\
+	&= ...
+	\end{align*}
+	Also können wir die Dezimalzahl $(13,6)_{10}$ als Binärzahl $(1101,1001...)_2$ darstellen.
+\end{dbox}
+
+\begin{dbox}
+	\begin{align*}
+	(13,6)_{10} &= (1101,1001...)_2\\
+	&= (-1)^0 \cdot (1,1011001...)_2 \cdot 2^3
+	\end{align*}
+	also $v = 0$, $m = (1,1011001...)_2$ und $e = 3$
+\end{dbox}
+
+\begin{dbox}
+	Eine reelle Zahl $r \in \mathbb{R}$ mit der Darstellung\\
+	\begin{equation}
+	r = (-1)^v \cdot \sum_{i = 0}^{t - 1} r_i \cdot 2^{-i} \cdot 2^e \text{ mit } r_0 = 0
+	\end{equation}
+	gehört der Menge der nicht-normierten oder subnormalen Gleitpunktzahlen $\mathbb{M}_s$ an.
+\end{dbox}
+
+\begin{dbox}
+	Es gilt analog zu Definition 1.2: Das Vorzeichen $(-1)^v$ wird durch das Vorzeichen-Bit $v \in \{0, 1\}$, der Wert der Mantisse $m$ durch die Ziffern $r_i \in \{0, 1\}$, $i = 1,..., t - 1$ und der Wert des Exponenten durch eine ganze Zahl $e \in \mathbb{Z}$ mit $e = e_{min}$ festgelegt.
+\end{dbox}
+
+\begin{dbox}
+	\begin{equation}
+	0 = (-1)^v \cdot 0 \cdot 2^{e_{min}}
+	\end{equation}
+\end{dbox}
+
+\setcounter{BoxCounter}{10}
 
 \begin{abox}
 v + 134 = 16
