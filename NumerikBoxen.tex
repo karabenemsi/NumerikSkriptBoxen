@@ -6,66 +6,69 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
+\usepackage{environ}
+
 
 % Title Page
 \title{Numerik Boxen}
-\author{}
+\author{Florian Lubitz \& Steffen Hecht}
 
+\newcounter{BoxCounter}
+\setcounter{BoxCounter}{10}
+\NewEnviron{tbox}{%
+	\stepcounter{BoxCounter}
+	\textbf{\arabic{BoxCounter}}
+	\BODY
+}
+\NewEnviron{abox}{%
+	\stepcounter{BoxCounter}
+	\textbf{\arabic{BoxCounter}}
+		\begin{align*}
+		\BODY
+		\end{align*}
+}
 
-\newenvironment{ebox}[1]{\textbf{#1}\\}{}
 
 \begin{document}
 \maketitle
 
-\begin{abstract}
-\end{abstract}
-
-
 \chapter{1}
 
-11
-\begin{equation*}
+\begin{abox}
 v + 134 = 16
-\end{equation*}
+\end{abox}
 	
-12
-\begin{equation*}
+\begin{abox}
 f_{rd}(r):= \delta_{r}:=rd(r)-r
-\end{equation*}
+\end{abox}
 
-13
-\begin{equation*}
+\begin{abox}
 f_{rel}:=\epsilon_{r}:= \frac{\delta_{r}}{r}=\frac{rd(r) -r}{r} \quad\text{ für }\quad r \ne 0
-\end{equation*}
+\end{abox}
 
-
-
-16
-\begin{equation*}
+\setcounter{BoxCounter}{15}
+\begin{abox}
 |\delta_{r}| \leqslant 2^{e-t} \qquad \text{und} \qquad  |\epsilon_{r}| \leqslant 2^{-t}
-\end{equation*}
+\end{abox}
 
-17
-\begin{equation*}
+\begin{abox}
 \epsilon = 2^{-t}
-\end{equation*}
+\end{abox}
 
-18
-
+\begin{tbox}
 ...die entsprechenden Maschinenoperationen, d.h. die Anwendung der jeweiligen Operation auf Zahlen im normierten Gleitpunkzahlenformat nach Def. 1.2
+\end{tbox}
 
-19
-
+\begin{tbox}
 I) Verknüpfung der Maschinenzahlen mit höherer (ausreichend hoher) Genauigkeit\\
 II) Runden des Ergebnisses auf eine Maschinenzahl
+\end{tbox}
 
-\begin{ebox}{20}
-	\begin{align*}
+\begin{abox}{20}
 	r \circ _{M}s := rd(r \circ s)
-	\end{align*}
-\end{ebox}
+\end{abox}
 
-\begin{ebox}{21}
+\begin{tbox}{21}
 	\begin{align*}
 	r + _{M} s = (1,11)_2 \cdot 2^0 +_{M} (1,10)_2 \cdot 2^2 &= (111)_2 \cdot 2^{-2} + (1,10)_2 \cdot 2^{-2}\\
 	&= (1000,10)_2 \cdot 2^{-2}\\
@@ -80,10 +83,10 @@ II) Runden des Ergebnisses auf eine Maschinenzahl
 	|f_{rel}| = |\frac{(1 +_M s)-(r+s)}{r+s}| = \frac{\frac18}{\frac{17}{8}} = \frac{1}{17} = 0,0588... \approx 5,88\%\\
 	\text{DAs ist relativ gut, denn der maximale Rundugnfehler bei einer 3-stelligen Mantisse ist} \quad \epsilon =   2^{-3} = 12,5\%
 	\end{align*}
-\end{ebox}
+\end{tbox}
 
 
-\begin{ebox}{23}
+\begin{tbox}{23}
 	\begin{align*}
 	r \circ_M s = rd(r \circ s) = (r\circ s)\cdot(1 + \epsilon_0)
 	\end{align*}
@@ -91,49 +94,39 @@ II) Runden des Ergebnisses auf eine Maschinenzahl
 	\begin{align*}
 	\epsilon_0 := \frac{(r\circ_M s)-(r \circ s)}{r \circ s} = \frac{rd(r \circ s) - (r \circ s)}{r \circ s} \leqslant \epsilon
 	\end{align*}
-\end{ebox}
+\end{tbox}
 
-\begin{ebox}{24}
-	\begin{align*}
+\begin{abox}{24}
 		\tilde{y} =& \tilde{x} +_M c \\
 		&= (\tilde{x} + c) \cdot (1+ \epsilon_2)\\
 		&= ((a +_M b) + c) \cdot (1+ \epsilon_2)\\
 		&= ((a + b) \cdot (1+ \epsilon_1) + c) \cdot (1+ \epsilon_2)\\
 		&= a + b + c + (a+b)\cdot\epsilon_1 + (a + b +c)\cdot\epsilon_2 + (a+b)\cdot\epsilon_1\epsilon_2
-	\end{align*}
-\end{ebox}
+\end{abox}
 
-\begin{ebox}{25}
-	\begin{align*}
+\begin{abox}{25}
 	\tilde{y} \overset{\cdot}{=}  a + b + c + (a+b)\cdot\epsilon_1 + (a + b +c)\cdot\epsilon_2
-	\end{align*}
-\end{ebox}
+\end{abox}
 
-\begin{ebox}{26}
-	\begin{align*}
+\begin{abox}{26}
 	f_{rel}(y) = \frac{\tilde{y} - y}{y} &= \frac{(a+b)\cdot\epsilon_1 + (a + b +c)\cdot\epsilon_2}{a + b + c}\\
 	&= \frac{a+b}{a+b+c}\cdot\epsilon_1 + \epsilon_2
-	\end{align*}
-\end{ebox}
+\end{abox}
 
-\begin{ebox}{27}
-	\begin{align}
+\begin{abox}{27}
 	|f_{rel}(y)| &= |\frac{a+b}{a+b+c}\cdot\epsilon_1 + \epsilon_2|\\ &\overset{(D.U.G)}{\leqslant} |\frac{a+b}{a+b+c}|\cdot|\epsilon_1| + |\epsilon_2|
-	\end{align}
-\end{ebox}
+\end{abox}
 
-\begin{ebox}{28}
-	\begin{align*}
+\begin{abox}{28}
 	|f_{rel}(y)| \leqslant (1+ | \frac{a+b}{a+b+c}|) \cdot \epsilon = (a+ \frac{1}{|1 + \frac{c}{a+b}|}) \cdot \epsilon
-	\end{align*}
-\end{ebox}
+\end{abox}
 
-\begin{ebox}{29}
+\begin{tbox}{29}
 	\begin{align*}
 	c \approx -(a+b)
 	\end{align*}
 	ist. Denn für $c \rightarrow -(a+b)$ ist $ \frac{|a+b|}{|a+b+c|} \rightarrow \infty$ und damit wird auch die obere Schranke von $|f_{rel}(y)|$ beliebig (unendlich) groß. In diesem Fall spricht man von \textbf{Auslöschung}
-\end{ebox}
+\end{tbox}
 
 
 \end{document}          

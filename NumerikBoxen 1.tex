@@ -9,10 +9,11 @@
 
 % Title Page
 \title{Numerik Boxen}
-\author{}
+\author{Florian Lubitz \& Steffen Hecht}
 
-
-\newenvironment{ebox}[1]{#1\\}{}
+\newcounter{BoxCounter}
+\newenvironment{tbox}[1]{#1\\}{}
+\newenvironment{abox}[1]{\stepcounter{BoxCounter}\value{BoxCounter}\\\begin{align*}}{\end{align*}}
 
 \begin{document}
 \maketitle
