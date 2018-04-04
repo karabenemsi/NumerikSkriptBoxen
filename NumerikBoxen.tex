@@ -31,7 +31,7 @@
 	\end{dbox}
 }
 \NewEnviron{abox}{%
-	\begin{dbox}	
+	\begin{dbox}
 		\begin{align*}
 		\BODY
 		\end{align*}
@@ -144,42 +144,48 @@ II) Runden des Ergebnisses auf eine Maschinenzahl
 \end{tbox}
 
 \begin{abox}
-	r \circ _{M}s := rd(r \circ s)
+	r \circ _{\mathbb{M}}s := rd(r \circ s)
 \end{abox}
 
 \begin{tbox}
 	\begin{align*}
-	r + _{M} s = (1,11)_2 \cdot 2^0 +_{M} (1,10)_2 \cdot 2^2 &= (111)_2 \cdot 2^{-2} + (1,10)_2 \cdot 2^{-2}\\
+	r + _{\mathbb{M}} s = (1,11)_2 \cdot 2^0 +_{\mathbb{M}} (1,10)_2 \cdot 2^2 &= (111)_2 \cdot 2^{-2} + (1,10)_2 \cdot 2^{-2}\\
 	&= (1000,10)_2 \cdot 2^{-2}\\
 	&= (100010)_2 \cdot 2^1\\
 	&= (1,00)_2 \cdot 2^1 = (2)_{10}
 	\end{align*}
-	wohingegen das exakte Ergebnis $ r+s = \frac74 + \frac38= \frac{17}{8}$ ist.\\
+	wohingegen das exakte Ergebnis $ r+s = \frac74 + \frac38 = \frac{17}{8}$ ist.\\
+	Der absolute Rundengsfehler ist also
 	\begin{align*}
-	\text{Der absolute Rundengsfehler ist also}\\
-	f_{rd} = (r+_M s) - (r + s) = 2 -\frac{17}{8} = -\frac{1}{8}\\
-	\text{und der relative Rundungsfehler ist}\\
-	|f_{rel}| = |\frac{(1 +_M s)-(r+s)}{r+s}| = \frac{\frac18}{\frac{17}{8}} = \frac{1}{17} = 0,0588... \approx 5,88\%\\
-	\text{DAs ist relativ gut, denn der maximale Rundugnfehler bei einer 3-stelligen Mantisse ist} \quad \epsilon =   2^{-3} = 12,5\%
+	f_{rd} = (r+_{\mathbb{M}} s) - (r + s) = 2 -\frac{17}{8} = -\frac{1}{8}
 	\end{align*}
+	und der relative Rundungsfehler ist
+	\begin{align*}
+	|f_{rel}| &= |\frac{(1 +_{\mathbb{M}} s)-(r+s)}{r+s}|\\
+	&= \frac{\frac18}{\frac{17}{8}}\\
+	&= \frac{1}{17}\\
+	&= 0,0588... \approx 5,88\%
+\end{align*}
+	Das ist relativ gut, denn der maximale Rundungsfehler bei einer 3-stelligen Mantisse ist
+	$\epsilon =   2^{-3} = 12,5\%$.
 \end{tbox}
 
 \stepcounter{BoxCounter}
 
 \begin{tbox}
 	\begin{align*}
-	r \circ_M s = rd(r \circ s) = (r\circ s)\cdot(1 + \epsilon_0)
+	r \circ_{\mathbb{M}} s = rd(r \circ s) = (r\circ s)\cdot(1 + \epsilon_0)
 	\end{align*}
-	wobei der realtie Fehler $\epsilon_0$ der Gleitpunktoperation wegen Def. 1.10 stets durh die Maschinengenauigkeit beschränkt ist,
+	wobei der relative Fehler $\epsilon_0$ der Gleitpunktoperation wegen Def. 1.10 stets durh die Maschinengenauigkeit beschränkt ist,
 	\begin{align*}
-	\epsilon_0 := \frac{(r\circ_M s)-(r \circ s)}{r \circ s} = \frac{rd(r \circ s) - (r \circ s)}{r \circ s} \leqslant \epsilon
+	\epsilon_0 := \frac{(r\circ_{\mathbb{M}} s)-(r \circ s)}{r \circ s} = \frac{rd(r \circ s) - (r \circ s)}{r \circ s} \leqslant \epsilon
 	\end{align*}
 \end{tbox}
 
 \begin{abox}
-		\tilde{y} =& \tilde{x} +_M c \\
+		\tilde{y} =& \tilde{x} +_{\mathbb{M}} c \\
 		&= (\tilde{x} + c) \cdot (1+ \epsilon_2)\\
-		&= ((a +_M b) + c) \cdot (1+ \epsilon_2)\\
+		&= ((a +_{\mathbb{M}} b) + c) \cdot (1+ \epsilon_2)\\
 		&= ((a + b) \cdot (1+ \epsilon_1) + c) \cdot (1+ \epsilon_2)\\
 		&= a + b + c + (a+b)\cdot\epsilon_1 + (a + b +c)\cdot\epsilon_2 + (a+b)\cdot\epsilon_1\epsilon_2
 \end{abox}
@@ -207,6 +213,9 @@ II) Runden des Ergebnisses auf eine Maschinenzahl
 	\end{align*}
 	ist. Denn für $c \rightarrow -(a+b)$ ist $ \frac{|a+b|}{|a+b+c|} \rightarrow \infty$ und damit wird auch die obere Schranke von $|f_{rel}(y)|$ beliebig (unendlich) groß. In diesem Fall spricht man von \textbf{Auslöschung}
 \end{tbox}
+
+
+30-36
 
 
 \end{document}          
