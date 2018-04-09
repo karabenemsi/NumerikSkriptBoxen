@@ -9,6 +9,7 @@
 \usepackage{environ}
 \usepackage{enumitem}
 \usepackage[many]{tcolorbox}
+\usepackage{xcolor}
 
 
 % Title Page
@@ -51,6 +52,7 @@
 \makeatother
 
 \begin{document}
+
 \maketitle
 
 \chapter{1}
@@ -217,5 +219,153 @@ II) Runden des Ergebnisses auf eine Maschinenzahl
 
 30-36
 
+\setcounter{BoxCounter}{36}
+\setcounter{equation}{11}
+
+\begin{tbox}
+	\begin{align*}
+	y + \delta_{y} = f(x + \delta_{x}) &= f(x) + f'(x)\delta_{x} + O(\delta_{x}^2)
+	\end{align*}
+	Unter Vernachlässigung der Terme höherer Ordnung gilt also:
+	\begin{align*}
+	\delta_{y} \overset{\cdot}{=} f'(x) \cdot \delta_{x}
+	\end{align*}
+	Die Verstärkung des relativen Rundungsfehlers $\epsilon_y$ des Resultats $y$ ergibt sich dann für $x,y \ne 0$:
+	\begin{align*}
+	\epsilon_y = f_{rel}(y) = \frac{\delta_{y}}{y} \overset{\cdot}{=} \frac{f'(x)\cdot \delta_{x}}{y} = \frac{x \dot f'(x)}{y} \cdot \frac{\delta_{x}}{x} = \frac{x \cdot f'(x)}{y} \cdot \epsilon_x \numbereq
+	\end{align*}
+	aus dem relativen Rundungsfehler $\epsilon_{x}$ der Eingabe $x$.
+\end{tbox}
+
+\begin{tbox}
+	... aus dem Verstärkungsfaktor
+	\begin{align*}
+		K_f(x) := |\frac{x \cdot f'(x)}{f(x)}|
+	\end{align*}
+	zwschen den relativen Rundungsfehlern aus (1.12)
+\end{tbox}
+
+\chapter{Lineare Gleichungssysteme}
+
+\begin{abox}
+\end{abox}
+\setcounter{BoxCounter}{39}
+
+\begin{tbox}
+\begin{align*}
+10 x_1 + 7x_2 + 0x_3 &= 7\\
+2,5x_2 + 5x_3 &= 2,5\\
+6,2x_3 &= 6,2
+\end{align*}
+... oder in Matrixschreibweise:
+\begin{align*}
+\begin{pmatrix}
+10 & -7 & 0\\
+0 & 2,5 & 5\\
+0 & 0 & 6,2
+\end{pmatrix} \cdot \begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix} = \begin{pmatrix}
+7 \\ 2,5 \\ 6,2
+\end{pmatrix}
+\end{align*}
+\end{tbox}
+
+\begin{tbox}
+	\begin{align*}
+x_3 &= \frac{6,2}{6,2} = 1 \\
+x_2 &= \frac{2,5-5x_3}{2,5} = \frac{2,4-5\cdot1}{2,5} = -1\\
+x_1 &=  \frac{7-0x_2+7x_2}{10} = \frac{7-0-7}{10} = 0
+\end{align*}
+Somit resultiert der Lösungsvektor $\begin{pmatrix}
+x_1\\x_2\\x_3
+\end{pmatrix} = \begin{pmatrix}0\\-1\\1\end{pmatrix}$
+\end{tbox}
+
+\begin{tbox}
+ \begin{enumerate}[label=\Roman*)]
+ \item Berechnung $x_n = \frac{b_n}{a_nn}$
+ \item Schrittweise Berechnung :\\
+ 	Für $i = n-1, n-2, ... , 3,2,1$ ist $x_i= \frac{b_i - \sum_{j=i+1}^{n}a_{ij} \cdot x_j}{a_{ii}}$
+ \end{enumerate}
+\end{tbox}
+
+\begin{abox}
+	\begin{pmatrix}
+		a_{11}& a_{12} & a{1n} \\
+a_{21}& a_{22} & a{2n} \\
+\vdots \\
+a_{n1} & a_{n2} & a_{nn}
+	\end{pmatrix}
+ \cdot \begin{pmatrix}
+ 	x_1 \\ x_2\\ \vdots \\ x_n \end{pmatrix}
+  = \begin{pmatrix}
+  	b_1 \\ b_2 \\ \vdots\\ b_n
+  \end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		10 & -7 & 0\\
+		-3 & 2 & 6\\
+		5 & -1 & 5
+	\end{pmatrix}
+\cdot \begin{pmatrix}
+	x_1 \\x_2 \\ x_3
+\end{pmatrix} = \begin{pmatrix}
+7 \\ 4 \\ 6
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+	10 & -7 & 0\\
+	0 & -0.1 & 6\\
+	5 & -1 & 5
+\end{pmatrix}
+\cdot 
+\begin{pmatrix}
+	x_1 \\x_2 \\ x_3
+\end{pmatrix} =
+\begin{pmatrix}
+7 \\ 6,1 \\ 6
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		10 & -7 & 0\\
+		0 & -0.1 & 6\\
+		0 & 2,5 & 5
+	\end{pmatrix}
+	\cdot 
+	\begin{pmatrix}
+		x_1 \\x_2 \\ x_3
+	\end{pmatrix} =
+	\begin{pmatrix}
+		7 \\ 6,1 \\ 2,5
+	\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		10 & -7 & 0\\
+		0 & -0.1 & 6\\
+		0 & 0 & 155
+	\end{pmatrix}
+	\cdot 
+	\begin{pmatrix}
+		x_1 \\x_2 \\ x_3
+	\end{pmatrix} =
+	\begin{pmatrix}
+		7 \\ 6,1 \\ 155
+	\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	x_3 &= \frac{155}{155} = 1\\ 
+\end{abox}
+
+48-51
 
 \end{document}          
