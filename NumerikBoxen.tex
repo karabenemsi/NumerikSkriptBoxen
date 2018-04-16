@@ -363,9 +363,94 @@ a_{n1} & a_{n2} & a_{nn}
 \end{abox}
 
 \begin{abox}
-	x_3 &= \frac{155}{155} = 1\\ 
+	x_3 &= \frac{155}{155} = 1\\
+	x_2 &= \frac{6,1 - 6 \cdot 1}{-0,1} = -1\\
+	x_1 &= \frac{7-(-7)\cdot(-1)-0\cdot1}{10} = 0
 \end{abox}
 
-48-51
+\begin{abox}
+	\begin{pmatrix}
+		10 &-7 & 0\\
+		0 & 0 & 6\\
+		0 & 2,5 & 5
+	\end{pmatrix} \cdot
+\begin{pmatrix}
+	x_1\\x_2\\x_3
+\end{pmatrix} = \begin{pmatrix}
+7 \\ 6,1 \\ 2,5
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		10 &-7 & 0\\
+		0 & 2,5 & 5\\
+				0 & -0,1 & 6
+	\end{pmatrix} \cdot
+	\begin{pmatrix}
+		x_1\\x_2\\x_3
+	\end{pmatrix} = \begin{pmatrix}
+		7 \\ 2,5 \\ 6,1
+	\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		10 &-7 & 0\\
+		0 & 2,5 & 5\\
+		0 & 0 & 6,2
+	\end{pmatrix} \cdot
+	\begin{pmatrix}
+		x_1\\x_2\\x_3
+	\end{pmatrix} = \begin{pmatrix}
+		7 \\ 2,5 \\ 6,2
+	\end{pmatrix}
+\end{abox}
+
+\begin{tbox}
+	Für eine $k \times n$ Matrix A und eine $n \times m$ Matrix B
+	
+	\begin{align*}
+	A =
+	\begin{pmatrix}
+	a_{11} & \dots & a_{1n}\\
+	\vdots & & \vdots \\
+	a_{k1}  & \dots & a_{kn}
+	\end{pmatrix}
+	\text{ und } B = \begin{pmatrix}
+		b_{11} & \dots & b_{1m}\\
+		\vdots & & \vdots \\
+		b_{n1}  & \dots & b_{bm}
+	\end{pmatrix}
+		\end{align*}
+		
+		ergibt sich das \underline{Matrixprodukt} $A \cdot B$ durch die $k \times m$ Matrix
+		
+		\begin{align*}
+			A \cdot B = \begin{pmatrix}
+			\sum_{j=1}^{n}a_{1j}\cdot b_{j1} & \dots & \sum_{j=1}^{n}a_{1j}\cdot b_{jm} \\
+			\vdots & & \vdots \\
+			\sum_{j=1}^{n}a_{kj}\cdot b_{j1} & \dots & \sum_{j=1}^{n}a_{kj}\cdot b_{jm}
+			\end{pmatrix}
+		\end{align*}
+\end{tbox}
+
+\begin{abox}
+	(AB)_{rs} = \sum_{j=1}^{n} a_{rj}b_{js}
+\end{abox}
+
+\begin{abox}
+	A \cdot (B \cdot C) &= (A \cdot B) \cdot C\\
+	A\cdot (B + C) &= A \cdot B + A \cdot C
+\end{abox}
+
+\begin{abox}
+	C = x^T \cdot y = (x_1, ... , x_n) \cdot \begin{pmatrix}
+		y_1 \\ \vdots \\ y_n
+	\end{pmatrix} = 
+\sum_{j=1}^{n} x_j \cdot y_j \quad \in \mathbb{R}
+\end{abox}
+
+
 
 \end{document}          
