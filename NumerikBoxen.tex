@@ -1,4 +1,4 @@
-\documentclass[13pt]{scrreprt}
+\documentclass[fontsize=13pt, parskip=half]{scrreprt}
 \usepackage[ngerman]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -62,19 +62,19 @@
 
 \begin{tbox}
 	Die \underline{Gleitpunktzahlendarstellung} zerlegt jede reelle Zahl $r \in \mathbb{R}$ in drei Bestandteile:\\
-	\begin{enumerate}[label=\Roman*)]
-		\item ein Vorzeichen $ (-1)^v$ mit $v \in \{0, 1\}$
+	\begin{enumerate}[label=\Roman*\right)]
+		\item ein Vorzeichen $\left(-1\right)^v$ mit $v \in \{0, 1\}$
 		\item eine Mantisse $m \in \mathbb{R}$ und
 		\item einen Exponenten $e \in \mathbb{Z}$, sodass
 	\end{enumerate}
 	\begin{equation}
-	r = (-1)^v \cdot m \cdot 2^e
+	r = \left(-1\right)^v \cdot m \cdot 2^e
 	\end{equation}
 \end{tbox}
 
 \begin{tbox}
 	\begin{equation}
-	r = (-1)^v \cdot \sum_{i = 0}^{t - 1} r_i \cdot 2^{-i} \text{ mit } r_0 = 1 \text{ (sodass } 1 \le m \le 2\text{)}
+	r = \left(-1\right)^v \cdot \sum_{i = 0}^{t - 1} r_i \cdot 2^{-i} \text{ mit } r_0 = 1 \text{ \left(sodass } 1 \le m \le 2\text{\right)}
 	\end{equation}
 \end{tbox}
 
@@ -86,31 +86,31 @@
 	&= 2^3 + 2^2 + 2^0 + 2^{-1} + 2^{-4} + 0,0375\\
 	&= ...
 	\end{align*}
-	Also können wir die Dezimalzahl $(13,6)_{10}$ als Binärzahl $(1101,1001...)_2$ darstellen.
+	Also können wir die Dezimalzahl $\left(13,6\right)_{10}$ als Binärzahl $\left(1101,1001...\right)_2$ darstellen.
 \end{tbox}
 
 \begin{tbox}
 	\begin{align*}
-	(13,6)_{10} &= (1101,1001...)_2\\
-	&= (-1)^0 \cdot (1,1011001...)_2 \cdot 2^3
+	\left(13,6\right)_{10} &= \left(1101,1001...\right)_2\\
+	&= \left(-1\right)^0 \cdot \left(1,1011001...\right)_2 \cdot 2^3
 	\end{align*}
-	also $v = 0$, $m = (1,1011001...)_2$ und $e = 3$
+	also $v = 0$, $m = \left(1,1011001...\right)_2$ und $e = 3$
 \end{tbox}
 
 \begin{tbox}
 	Eine reelle Zahl $r \in \mathbb{R}$ mit der Darstellung\\
 	\begin{equation}
-	r = (-1)^v \cdot \sum_{i = 0}^{t - 1} r_i \cdot 2^{-i} \cdot 2^e \text{ mit } r_0 = 0
+	r = \left(-1\right)^v \cdot \sum_{i = 0}^{t - 1} r_i \cdot 2^{-i} \cdot 2^e \text{ mit } r_0 = 0
 	\end{equation}
 	gehört der Menge der nicht-normierten oder subnormalen Gleitpunktzahlen $\mathbb{M}_s$ an.
 \end{tbox}
 
 \begin{tbox}
-	Es gilt analog zu Definition 1.2: Das Vorzeichen $(-1)^v$ wird durch das Vorzeichen-Bit $v \in \{0, 1\}$, der Wert der Mantisse $m$ durch die Ziffern $r_i \in \{0, 1\}$, $i = 1,..., t - 1$ und der Wert des Exponenten durch eine ganze Zahl $e \in \mathbb{Z}$ mit $e = e_{min}$ festgelegt.
+	Es gilt analog zu Definition 1.2: Das Vorzeichen $\left(-1\right)^v$ wird durch das Vorzeichen-Bit $v \in \{0, 1\}$, der Wert der Mantisse $m$ durch die Ziffern $r_i \in \{0, 1\}$, $i = 1,..., t - 1$ und der Wert des Exponenten durch eine ganze Zahl $e \in \mathbb{Z}$ mit $e = e_{min}$ festgelegt.
 \end{tbox}
 
 \begin{abox}
-	0 = (-1)^v \cdot 0 \cdot 2^{e_{min}} \numbereq
+	0 = \left(-1\right)^v \cdot 0 \cdot 2^{e_{min}} \numbereq
 \end{abox}
 
 \setcounter{BoxCounter}{10}
@@ -120,11 +120,11 @@ v + 134 = 16
 \end{abox}
 	
 \begin{abox}
-f_{rd}(r):= \delta_{r}:=rd(r)-r
+f_{rd}\left(r\right):= \delta_{r}:=rd\left(r\right)-r
 \end{abox}
 
 \begin{abox}
-f_{rel}:=\epsilon_{r}:= \frac{\delta_{r}}{r}=\frac{rd(r) -r}{r} \quad\text{ für }\quad r \ne 0
+f_{rel}:=\epsilon_{r}:= \frac{\delta_{r}}{r}=\frac{rd\left(r\right) -r}{r} \quad\text{ für }\quad r \ne 0
 \end{abox}
 
 \setcounter{BoxCounter}{15}
@@ -141,29 +141,29 @@ f_{rel}:=\epsilon_{r}:= \frac{\delta_{r}}{r}=\frac{rd(r) -r}{r} \quad\text{ für
 \end{tbox}
 
 \begin{tbox}
-I) Verknüpfung der Maschinenzahlen mit höherer (ausreichend hoher) Genauigkeit\\
-II) Runden des Ergebnisses auf eine Maschinenzahl
+I\right) Verknüpfung der Maschinenzahlen mit höherer \left(ausreichend hoher\right) Genauigkeit\\
+II\right) Runden des Ergebnisses auf eine Maschinenzahl
 \end{tbox}
 
 \begin{abox}
-	r \circ _{\mathbb{M}}s := rd(r \circ s)
+	r \circ _{\mathbb{M}}s := rd\left(r \circ s\right)
 \end{abox}
 
 \begin{tbox}
 	\begin{align*}
-	r + _{\mathbb{M}} s = (1,11)_2 \cdot 2^0 +_{\mathbb{M}} (1,10)_2 \cdot 2^2 &= (111)_2 \cdot 2^{-2} + (1,10)_2 \cdot 2^{-2}\\
-	&= (1000,10)_2 \cdot 2^{-2}\\
-	&= (100010)_2 \cdot 2^1\\
-	&= (1,00)_2 \cdot 2^1 = (2)_{10}
+	r + _{\mathbb{M}} s = \left(1,11\right)_2 \cdot 2^0 +_{\mathbb{M}} \left(1,10\right)_2 \cdot 2^2 &= \left(111\right)_2 \cdot 2^{-2} + \left(1,10\right)_2 \cdot 2^{-2}\\
+	&= \left(1000,10\right)_2 \cdot 2^{-2}\\
+	&= \left(100010\right)_2 \cdot 2^1\\
+	&= \left(1,00\right)_2 \cdot 2^1 = \left(2\right)_{10}
 	\end{align*}
 	wohingegen das exakte Ergebnis $ r+s = \frac74 + \frac38 = \frac{17}{8}$ ist.\\
 	Der absolute Rundengsfehler ist also
 	\begin{align*}
-	f_{rd} = (r+_{\mathbb{M}} s) - (r + s) = 2 -\frac{17}{8} = -\frac{1}{8}
+	f_{rd} = \left(r+_{\mathbb{M}} s\right) - \left(r + s\right) = 2 -\frac{17}{8} = -\frac{1}{8}
 	\end{align*}
 	und der relative Rundungsfehler ist
 	\begin{align*}
-	|f_{rel}| &= |\frac{(1 +_{\mathbb{M}} s)-(r+s)}{r+s}|\\
+	|f_{rel}| &= |\frac{\left(1 +_{\mathbb{M}} s\right)-\left(r+s\right)}{r+s}|\\
 	&= \frac{\frac18}{\frac{17}{8}}\\
 	&= \frac{1}{17}\\
 	&= 0,0588... \approx 5,88\%
@@ -176,44 +176,44 @@ II) Runden des Ergebnisses auf eine Maschinenzahl
 
 \begin{tbox}
 	\begin{align*}
-	r \circ_{\mathbb{M}} s = rd(r \circ s) = (r\circ s)\cdot(1 + \epsilon_0)
+	r \circ_{\mathbb{M}} s = rd\left(r \circ s\right) = \left(r\circ s\right)\cdot\left(1 + \epsilon_0\right)
 	\end{align*}
 	wobei der relative Fehler $\epsilon_0$ der Gleitpunktoperation wegen Def. 1.10 stets durh die Maschinengenauigkeit beschränkt ist,
 	\begin{align*}
-	\epsilon_0 := \frac{(r\circ_{\mathbb{M}} s)-(r \circ s)}{r \circ s} = \frac{rd(r \circ s) - (r \circ s)}{r \circ s} \leqslant \epsilon
+	\epsilon_0 := \frac{\left(r\circ_{\mathbb{M}} s\right)-\left(r \circ s\right)}{r \circ s} = \frac{rd\left(r \circ s\right) - \left(r \circ s\right)}{r \circ s} \leqslant \epsilon
 	\end{align*}
 \end{tbox}
 
 \begin{abox}
 		\tilde{y} =& \tilde{x} +_{\mathbb{M}} c \\
-		&= (\tilde{x} + c) \cdot (1+ \epsilon_2)\\
-		&= ((a +_{\mathbb{M}} b) + c) \cdot (1+ \epsilon_2)\\
-		&= ((a + b) \cdot (1+ \epsilon_1) + c) \cdot (1+ \epsilon_2)\\
-		&= a + b + c + (a+b)\cdot\epsilon_1 + (a + b +c)\cdot\epsilon_2 + (a+b)\cdot\epsilon_1\epsilon_2
+		&= \left(\tilde{x} + c\right) \cdot \left(1+ \epsilon_2\right)\\
+		&= \left(\left(a +_{\mathbb{M}} b\right) + c\right) \cdot \left(1+ \epsilon_2\right)\\
+		&= \left(\left(a + b\right) \cdot \left(1+ \epsilon_1\right) + c\right) \cdot \left(1+ \epsilon_2\right)\\
+		&= a + b + c + \left(a+b\right)\cdot\epsilon_1 + \left(a + b +c\right)\cdot\epsilon_2 + \left(a+b\right)\cdot\epsilon_1\epsilon_2
 \end{abox}
 
 \begin{abox}
-	\tilde{y} \overset{\cdot}{=}  a + b + c + (a+b)\cdot\epsilon_1 + (a + b +c)\cdot\epsilon_2
+	\tilde{y} \overset{\cdot}{=}  a + b + c + \left(a+b\right)\cdot\epsilon_1 + \left(a + b +c\right)\cdot\epsilon_2
 \end{abox}
 
 \begin{abox}
-	f_{rel}(y) = \frac{\tilde{y} - y}{y} &= \frac{(a+b)\cdot\epsilon_1 + (a + b +c)\cdot\epsilon_2}{a + b + c}\\
+	f_{rel}\left(y\right) = \frac{\tilde{y} - y}{y} &= \frac{\left(a+b\right)\cdot\epsilon_1 + \left(a + b +c\right)\cdot\epsilon_2}{a + b + c}\\
 	&= \frac{a+b}{a+b+c}\cdot\epsilon_1 + \epsilon_2
 \end{abox}
 
 \begin{abox}
-	|f_{rel}(y)| &= |\frac{a+b}{a+b+c}\cdot\epsilon_1 + \epsilon_2|\\ &\overset{(D.U.G)}{\leqslant} |\frac{a+b}{a+b+c}|\cdot|\epsilon_1| + |\epsilon_2|
+	|f_{rel}\left(y\right)| &= |\frac{a+b}{a+b+c}\cdot\epsilon_1 + \epsilon_2|\\ &\overset{\left(D.U.G\right)}{\leqslant} |\frac{a+b}{a+b+c}|\cdot|\epsilon_1| + |\epsilon_2|
 \end{abox}
 
 \begin{abox}
-	|f_{rel}(y)| \leqslant (1+ | \frac{a+b}{a+b+c}|) \cdot \epsilon = (a+ \frac{1}{|1 + \frac{c}{a+b}|}) \cdot \epsilon
+	|f_{rel}\left(y\right)| \leqslant \left(1+ | \frac{a+b}{a+b+c}|\right) \cdot \epsilon = \left(a+ \frac{1}{|1 + \frac{c}{a+b}|}\right) \cdot \epsilon
 \end{abox}
 
 \begin{tbox}
 	\begin{align*}
-	c \approx -(a+b)
+	c \approx -\left(a+b\right)
 	\end{align*}
-	ist. Denn für $c \rightarrow -(a+b)$ ist $ \frac{|a+b|}{|a+b+c|} \rightarrow \infty$ und damit wird auch die obere Schranke von $|f_{rel}(y)|$ beliebig (unendlich) groß. In diesem Fall spricht man von \textbf{Auslöschung}
+	ist. Denn für $c \rightarrow -\left(a+b\right)$ ist $ \frac{|a+b|}{|a+b+c|} \rightarrow \infty$ und damit wird auch die obere Schranke von $|f_{rel}\left(y\right)|$ beliebig \left(unendlich\right) groß. In diesem Fall spricht man von \textbf{Auslöschung}
 \end{tbox}
 
 
@@ -224,15 +224,15 @@ II) Runden des Ergebnisses auf eine Maschinenzahl
 
 \begin{tbox}
 	\begin{align*}
-	y + \delta_{y} = f(x + \delta_{x}) &= f(x) + f'(x)\delta_{x} + O(\delta_{x}^2)
+	y + \delta_{y} = f\left(x + \delta_{x}\right) &= f\left(x\right) + f'\left(x\right)\delta_{x} + O\left(\delta_{x}^2\right)
 	\end{align*}
 	Unter Vernachlässigung der Terme höherer Ordnung gilt also:
 	\begin{align*}
-	\delta_{y} \overset{\cdot}{=} f'(x) \cdot \delta_{x}
+	\delta_{y} \overset{\cdot}{=} f'\left(x\right) \cdot \delta_{x}
 	\end{align*}
 	Die Verstärkung des relativen Rundungsfehlers $\epsilon_y$ des Resultats $y$ ergibt sich dann für $x,y \ne 0$:
 	\begin{align*}
-	\epsilon_y = f_{rel}(y) = \frac{\delta_{y}}{y} \overset{\cdot}{=} \frac{f'(x)\cdot \delta_{x}}{y} = \frac{x \dot f'(x)}{y} \cdot \frac{\delta_{x}}{x} = \frac{x \cdot f'(x)}{y} \cdot \epsilon_x \numbereq
+	\epsilon_y = f_{rel}\left(y\right) = \frac{\delta_{y}}{y} \overset{\cdot}{=} \frac{f'\left(x\right)\cdot \delta_{x}}{y} = \frac{x \dot f'\left(x\right)}{y} \cdot \frac{\delta_{x}}{x} = \frac{x \cdot f'\left(x\right)}{y} \cdot \epsilon_x \numbereq
 	\end{align*}
 	aus dem relativen Rundungsfehler $\epsilon_{x}$ der Eingabe $x$.
 \end{tbox}
@@ -240,9 +240,9 @@ II) Runden des Ergebnisses auf eine Maschinenzahl
 \begin{tbox}
 	... aus dem Verstärkungsfaktor
 	\begin{align*}
-		K_f(x) := |\frac{x \cdot f'(x)}{f(x)}|
+		K_f\left(x\right) := |\frac{x \cdot f'\left(x\right)}{f\left(x\right)}|
 	\end{align*}
-	zwschen den relativen Rundungsfehlern aus (1.12)
+	zwschen den relativen Rundungsfehlern aus \left(1.12\right)
 \end{tbox}
 
 \chapter{Lineare Gleichungssysteme}
@@ -283,7 +283,7 @@ x_1\\x_2\\x_3
 \end{tbox}
 
 \begin{tbox}
- \begin{enumerate}[label=\Roman*)]
+ \begin{enumerate}[label=\Roman*\right)]
  \item Berechnung $x_n = \frac{b_n}{a_nn}$
  \item Schrittweise Berechnung :\\
  	Für $i = n-1, n-2, ... , 3,2,1$ ist $x_i= \frac{b_i - \sum_{j=i+1}^{n}a_{ij} \cdot x_j}{a_{ii}}$
@@ -365,7 +365,7 @@ a_{n1} & a_{n2} & a_{nn}
 \begin{abox}
 	x_3 &= \frac{155}{155} = 1\\
 	x_2 &= \frac{6,1 - 6 \cdot 1}{-0,1} = -1\\
-	x_1 &= \frac{7-(-7)\cdot(-1)-0\cdot1}{10} = 0
+	x_1 &= \frac{7-\left(-7\right)\cdot\left(-1\right)-0\cdot1}{10} = 0
 \end{abox}
 
 \begin{abox}
@@ -436,21 +436,67 @@ a_{n1} & a_{n2} & a_{nn}
 \end{tbox}
 
 \begin{abox}
-	(AB)_{rs} = \sum_{j=1}^{n} a_{rj}b_{js}
+	\left(AB\right)_{rs} = \sum_{j=1}^{n} a_{rj}b_{js}
 \end{abox}
 
 \begin{abox}
-	A \cdot (B \cdot C) &= (A \cdot B) \cdot C\\
-	A\cdot (B + C) &= A \cdot B + A \cdot C
+	A \cdot \left(B \cdot C\right) &= \left(A \cdot B\right) \cdot C\\
+	A\cdot \left(B + C\right) &= A \cdot B + A \cdot C
 \end{abox}
 
+% 55
 \begin{abox}
-	C = x^T \cdot y = (x_1, ... , x_n) \cdot \begin{pmatrix}
+	C = x^T \cdot y = \left(x_1, ... , x_n\right) \cdot \begin{pmatrix}
 		y_1 \\ \vdots \\ y_n
 	\end{pmatrix} = 
 \sum_{j=1}^{n} x_j \cdot y_j \quad \in \mathbb{R}
 \end{abox}
 
+Missing: 56-61
 
+\setcounter{BoxCounter}{61}
 
+\begin{abox}
+	A\cdot x = b \text{ mit } A=\begin{pmatrix}
+		a_{11} & ... & a_{1n}\\
+		\vdots & & \vdots \\
+		a_{m1} & ... & a_{mn}
+	\end{pmatrix}, x=\begin{pmatrix}
+	x_1 \\ \vdots \\ x_n
+\end{pmatrix}, b= \begin{pmatrix}
+b_1 \\ \vdots \\ b_n
+\end{pmatrix}\text{ für } \underline{m>n}
+\end{abox}
+
+\begin{tbox}
+	\begin{align*}
+		x = \arg\min_{x'} \left|\left|Ax' - b\right|\right|_{2}^2
+	\end{align*}
+	genügt. Man bezeichnet dieses Verfahren auch als Methode der kleinsten Quadrate.
+\end{tbox}
+
+\begin{abox}
+	Ax-b = \begin{pmatrix}
+		\sum_{j=1}^{n} a_{1j}x_{j}-b_1 \\
+		\vdots \\
+		\sum_{j=1}^{n} a_{mj}x_{j}-b_m \\
+	\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	f\left(x\right):= \left|\left|Ax-b\right|\right|_2^2 = \sum_{k=1}^{m}\left(\sum_{j=1}^{n} a_{kj} \cdot x_{j} - b_{k}\right)^2
+\end{abox}
+
+\begin{abox}
+	0 \overset{!}{=} \dfrac{6f}{6x_i} = \sum_{K=1}^{m}2\cdot \left(a_{Kj}\cdot x_{j} - b_K\right) \cdot a_{Ki} \text{ für } i =1 ,...,n \\
+	\Leftrightarrow \sum_{K=1}^{m}a_{Ki} \sum_{j=1}^{n}a_{Kj} \cdot x_{j} = \sum_{K=1}^{m}a_{Ki} \cdot b_{K} \text{ für } i =1 ,...,n \\
+\end{abox}
+
+\begin{abox}
+	\left(A^TAx\right)_i \overset{!}{=} \left(A^Tb\right)_i \text{ für } i = 1, ..., n
+\end{abox}
+\begin{abox}
+	A^TAx = A^Tb\\
+	\text{Diese Gleichung wird als \underline{Normalgleichung} zu A und b bezeichnet.}
+\end{abox}
 \end{document}          
