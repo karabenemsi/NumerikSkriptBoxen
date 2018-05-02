@@ -62,19 +62,19 @@
 
 \begin{tbox}
 	Die \underline{Gleitpunktzahlendarstellung} zerlegt jede reelle Zahl $r \in \mathbb{R}$ in drei Bestandteile:\\
-	\begin{enumerate}[label=\Roman*\right)]
-		\item ein Vorzeichen $\left(-1\right)^v$ mit $v \in \{0, 1\}$
+	\begin{enumerate}[label=\Roman*)]
+		\item ein Vorzeichen $(-1)^v$ mit $v \in \{0, 1\}$
 		\item eine Mantisse $m \in \mathbb{R}$ und
 		\item einen Exponenten $e \in \mathbb{Z}$, sodass
 	\end{enumerate}
 	\begin{equation}
-	r = \left(-1\right)^v \cdot m \cdot 2^e
+	r = (-1)^v \cdot m \cdot 2^e
 	\end{equation}
 \end{tbox}
 
 \begin{tbox}
 	\begin{equation}
-	r = \left(-1\right)^v \cdot \sum_{i = 0}^{t - 1} r_i \cdot 2^{-i} \text{ mit } r_0 = 1 \text{ \left(sodass } 1 \le m \le 2\text{\right)}
+	r = \left(-1\right)^v \cdot \sum_{i = 0}^{t - 1} r_i \cdot 2^{-i} \text{ mit } r_0 = 1 \text{ (sodass } 1 \le m \le 2\text{)}
 	\end{equation}
 \end{tbox}
 
@@ -141,8 +141,8 @@ f_{rel}:=\epsilon_{r}:= \frac{\delta_{r}}{r}=\frac{rd\left(r\right) -r}{r} \quad
 \end{tbox}
 
 \begin{tbox}
-I\right) Verknüpfung der Maschinenzahlen mit höherer \left(ausreichend hoher\right) Genauigkeit\\
-II\right) Runden des Ergebnisses auf eine Maschinenzahl
+I ) Verknüpfung der Maschinenzahlen mit höherer (ausreichend hoher) Genauigkeit\\
+II) Runden des Ergebnisses auf eine Maschinenzahl
 \end{tbox}
 
 \begin{abox}
@@ -213,7 +213,7 @@ II\right) Runden des Ergebnisses auf eine Maschinenzahl
 	\begin{align*}
 	c \approx -\left(a+b\right)
 	\end{align*}
-	ist. Denn für $c \rightarrow -\left(a+b\right)$ ist $ \frac{|a+b|}{|a+b+c|} \rightarrow \infty$ und damit wird auch die obere Schranke von $|f_{rel}\left(y\right)|$ beliebig \left(unendlich\right) groß. In diesem Fall spricht man von \textbf{Auslöschung}
+	ist. Denn für $c \rightarrow -\left(a+b\right)$ ist $ \frac{|a+b|}{|a+b+c|} \rightarrow \infty$ und damit wird auch die obere Schranke von $|f_{rel}\left(y\right)|$ beliebig (unendlich) groß. In diesem Fall spricht man von \textbf{Auslöschung}
 \end{tbox}
 
 
@@ -242,7 +242,7 @@ II\right) Runden des Ergebnisses auf eine Maschinenzahl
 	\begin{align*}
 		K_f\left(x\right) := |\frac{x \cdot f'\left(x\right)}{f\left(x\right)}|
 	\end{align*}
-	zwschen den relativen Rundungsfehlern aus \left(1.12\right)
+	zwschen den relativen Rundungsfehlern aus (1.12)
 \end{tbox}
 
 \chapter{Lineare Gleichungssysteme}
@@ -283,7 +283,7 @@ x_1\\x_2\\x_3
 \end{tbox}
 
 \begin{tbox}
- \begin{enumerate}[label=\Roman*\right)]
+ \begin{enumerate}[label=\Roman*)]
  \item Berechnung $x_n = \frac{b_n}{a_nn}$
  \item Schrittweise Berechnung :\\
  	Für $i = n-1, n-2, ... , 3,2,1$ ist $x_i= \frac{b_i - \sum_{j=i+1}^{n}a_{ij} \cdot x_j}{a_{ii}}$
@@ -499,4 +499,241 @@ b_1 \\ \vdots \\ b_n
 	A^TAx = A^Tb\\
 	\text{Diese Gleichung wird als \underline{Normalgleichung} zu A und b bezeichnet.}
 \end{abox}
+
+\setcounter{BoxCounter}{68}
+
+\begin{abox}
+	\begin{pmatrix}
+		1 & 2&-1\\
+		1&1&4
+	\end{pmatrix} \cdot 
+\begin{pmatrix}
+	1&1\\2&1\\-1&4
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+	x_1&x_2
+\end{pmatrix} = \begin{pmatrix}
+1&2&-1\\1&1&4
+\end{pmatrix}\cdot \begin{pmatrix}
+1\\0\\0
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		6&-1\\-1&18
+	\end{pmatrix}\cdot\begin{pmatrix}
+	x_1\\x_2
+\end{pmatrix}=\begin{pmatrix}
+1\\1
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	x=\frac{1}{6\cdot18-(-1)\cdot(-1)} \cdot \begin{pmatrix}
+		18&1\\1&6
+	\end{pmatrix} \cdot \begin{pmatrix}
+	1\\1
+\end{pmatrix} = = \begin{pmatrix}
+\frac{19}{107}\\\frac{7}{107}
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	g(x)=a+bx
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		a+bx_1\\a+bx_2\\a+bx_3 \\\vdots \\a+bx_n
+	\end{pmatrix}\overset{!}{\approx}\begin{pmatrix}
+	y_1\\y_2\\\vdots\\y_n
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	A \cdot \begin{pmatrix}
+		a\\b
+	\end{pmatrix} \approx y \text{ mit } A= \begin{pmatrix}
+	a+bx_1\\a+bx_2\\a+bx_3 \\\vdots \\a+bx_n
+\end{pmatrix}, y = \begin{pmatrix}
+y_1\\y_2\\\vdots\\y_n
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		1&1&\dots & 1\\
+		x_1 & x_2 & \dots & x_n
+	\end{pmatrix} \cdot \begin{pmatrix}
+	1& x_1\\1&x_2\\\vdots&\vdots\\1&x_n
+\end{pmatrix} \cdot \begin{pmatrix}
+a\\b
+\end{pmatrix} = \begin{pmatrix}
+1&1&\dots & 1\\
+x_1 & x_2 & \dots & x_n
+\end{pmatrix} \cdot \begin{pmatrix}
+1& y_1\\1&y_2\\\vdots&\vdots\\1&y_n
+\end{pmatrix}
+\end{abox}
+
+
+\begin{abox}
+	\begin{pmatrix}
+		n & \sum_{i=1}^{n}x_i\\
+		\sum_{i=1}^{n}x_i & \sum_{i=1}^{n}x_i^2
+	\end{pmatrix} \cdot \begin{pmatrix}
+	a\\b
+\end{pmatrix} = \begin{pmatrix}
+\sum_{i=1}^{n}y_i\\\sum_{i=1}^{n}x_iy_i
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	P_1(1,2) &: a+b\cdot1 \approx 2\\
+	P_2(2,1) &: a+b\cdot2 \approx 1\\
+	P_3(4,3) &: a+b\cdot4 \approx 3\\
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		1 & 1\\1&2\\1&4
+	\end{pmatrix} \cdot \begin{pmatrix}
+	a\\b
+\end{pmatrix} = \begin{pmatrix}
+2\\1\\3
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		1&1&1\\1&2&4
+	\end{pmatrix}
+	\begin{pmatrix}
+	1&1\\1&2\\1&4
+\end{pmatrix}\cdot \begin{pmatrix}
+a\\b
+\end{pmatrix} =	\begin{pmatrix}
+1&1&1\\1&2&4
+\end{pmatrix} \cdot \begin{pmatrix}
+2\\1\\3
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		3&7\\7&21
+	\end{pmatrix}	\cdot \begin{pmatrix}
+	a\\b
+\end{pmatrix} = \begin{pmatrix}
+6\\16
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	\begin{pmatrix}
+		3&7\\0&\frac{14}{3}
+	\end{pmatrix} 	\cdot \begin{pmatrix}
+	a\\b
+\end{pmatrix} = \begin{pmatrix}
+6\\2
+\end{pmatrix}
+\end{abox}
+%82
+\begin{abox}
+	g(x)=1+\frac37\cdot x
+\end{abox}
+
+\setcounter{BoxCounter}{83}
+\begin{abox}
+	G= \begin{pmatrix}
+		g_1(x_1)&g_1(x_1)&\dots&g_m(x_1)\\
+		\vdots\\
+		g_1(x_n)&g_1(x_n)&\dots&g_m(x_n)\\
+	\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	G^T\cdot G\cdot \begin{pmatrix}
+		a_1 \\ \vdots \\ a_m
+	\end{pmatrix} = G^T\cdot \begin{pmatrix}
+	y_1 \\ \vdots \\y_n
+\end{pmatrix}
+\end{abox}
+
+\chapter{Interpolation}
+\begin{abox}
+	Inhalt...
+\end{abox}
+
+\begin{tbox}
+	\begin{align*}
+	G(x) = \sum_{k=0}^{n}c_k\cdot g_k(x)
+	\end{align*}
+	für alle $ j=0,1,...,n$ durch die Punkte $(x_j,x_j)$ \underline{interpoliert} (d.h.) druch diese Punkte verläuft), so dass gilt:
+	\begin{align*}
+		G(x_j)\overset{!}{=} y_j \text{ für alle } j= 0,1, ... ,n 
+	\end{align*}.
+\end{tbox}
+
+\begin{abox}
+	\begin{pmatrix}
+		g_0(x_0)& g_1(x_0)& ... & g_n(x_0)\\
+		\vdots& \vdots& &\vdots\\
+				g_0(x_n)& g_1(x_n)& ... & g_n(x_n)\\
+	\end{pmatrix} \cdot \begin{pmatrix}
+	c_0\\\vdots\\c_n
+ \end{pmatrix} \overset{!}{=} \begin{pmatrix}
+ y_0\\\vdots\\y_n
+\end{pmatrix}
+\end{abox}
+
+\begin{abox}
+	g_k(x) = x^k
+\end{abox}
+
+\begin{abox}
+	p(x) = \sum_{k=0}^{n}c_k\cdot x^k
+\end{abox}
+
+\begin{abox}
+	p(x_j)\overset{!}{=} y_j
+\end{abox}
+
+\begin{abox}
+	L_j(x):=\prod_{i=0, i\ne j}^{n} \frac{x-x_i}{x_j-x_i}
+	= \frac{(x-x_0) ... (x-x_{j-1})(x-x_{j+1}) ... (x-x_{n})}{(x_j-x_0) ... (x_j-x_{j-1})(x_j-x_{j+1}) ... (x_j-x_{n})}
+\end{abox}
+
+\begin{abox}
+	L_j(x_i) = \begin{cases}
+		0, \text{ für } i=0,1, ... ,n \text{ mit } i\ne j\\
+		1, \text{ für } i=j
+	\end{cases} 
+\end{abox}
+
+\begin{abox}
+	p(x)= \sum_{j=0}^{n}y_j \cdot L_j(x)
+\end{abox}
+
+\begin{tbox}
+	$...(\underline{-1}, \frac12),(\underline{0},1), (\underline{1},2)$ gehören die Lagrange-Polynome
+	\begin{align*}
+		L_0(x)&=\frac{(x-0)\cdot(x-1)}{(-1-0)\cdot(-1-1)} = \frac12x^2 - \frac12x\\
+		L_1(x)&=\frac{(x+1)(x-1)}{(0+1)(0-1)} = -x^2+1\\
+		L_2(x)&=\frac{(x+1)(x-0)}{(1+1)\cdot(1-0)} = \frac12x^2+\frac12x 
+	\end{align*}
+	Damit ist das Interpolationspolynom:
+	\begin{align*}
+		p(x) = \frac12L_0(x)+L_1(x)+2L_2(x)= \frac14x^2+\frac34x+1
+	\end{align*}
+	Für die Stelle $x=2$ gilt damit:
+	\begin{align*}
+		p(2)= \frac14 \cdot 4 + \frac34 \cdot 2 + 1 = 3,5
+	\end{align*}
+	Als Fehler ergibt sich: $f(2) + p(2) = 4-3,5 = 0,5$
+\end{tbox}
+
+
 \end{document}          
